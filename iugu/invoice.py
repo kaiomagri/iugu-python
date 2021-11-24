@@ -13,7 +13,7 @@ class Invoice(Action):
             raise RequiredParameters('Invoice due_date not informed')
         elif not data.get('items', None):
             raise RequiredParameters('Invoice items not informed')
-        url = self.api.make_url(['invoices'])
+        url = 'https://api.iugu.com/v1/invoices'
         return super(Invoice, self).create(url, data)
 
     def search(self, id):
